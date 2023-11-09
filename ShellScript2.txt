@@ -1,0 +1,11 @@
+#Shell Script to Replace "give" with "learning" in Lines Containing "welcome" from 5th Line Onwards:
+
+#!/bin/bash
+
+# Input file
+input_file="your_file.txt"  # Replace with the actual file name
+
+# Replace "give" with "learning" in lines containing "welcome" from 5th line onwards
+sed -i '5,$s/\bgive\b/learning/g' "$input_file"
+
+echo "Word replacement completed."

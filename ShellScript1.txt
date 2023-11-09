@@ -1,0 +1,16 @@
+#Shell Script to Print HTTP Error Code and Message for guvi.in:
+
+#!/bin/bash
+
+# Send a GET request to guvi.in and capture the HTTP status code
+http_status=$(curl -s -o /dev/null -w "%{http_code}" http://guvi.in)
+
+# Print the HTTP status code
+echo "HTTP Status Code: $http_status"
+
+# Print success/failure message based on the HTTP status code
+if [ $http_status -ge 200 ] && [ $http_status -lt 400 ]; then
+    echo "Success: Website is reachable."
+else
+    echo "Failure: Website is not reachable or encountered an error."
+fi
